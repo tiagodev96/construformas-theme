@@ -1,0 +1,241 @@
+main {
+  background: var(--ice);
+  padding: 100px 0;
+}
+
+/** CONTACT CARD */
+.card {
+  width: auto;
+  height: auto;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid rgba(49, 49, 49, 0.2);
+  transition: all 0.2s;
+  box-shadow: 12px 12px 2px 1px rgba(49, 49, 49, 0.2);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: -12px 12px 2px -1px rgba(49, 49, 49, 0.2);
+}
+
+.card h3 {
+  font-size: 32px;
+  line-height: 50px;
+  color: var(--jet);
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--jet);
+  opacity: 0.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/** FORM CARD  */
+.form-card {
+  width: auto;
+  height: auto;
+  margin-top: 64px;
+  background: rgb(236, 236, 236);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px 60px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-card h2 {
+  text-align: left;
+  font-weight: normal;
+}
+
+.form-field {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.form-field i {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.form-field label {
+  display: none;
+  opacity: 0;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-size: 14px;
+  line-height: 22px;
+  width: 350px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  background: rgba(49, 49, 49, 0.9);
+  color: white;
+  border: 1px solid rgba(49, 49, 49, 0.5);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  background: transparent;
+  color: var(--jet);
+}
+
+.form-field input:focus::placeholder,
+.form-field select:focus::placeholder,
+.form-field textarea:focus::placeholder {
+  color: var(--jet);
+}
+
+.form-field textarea {
+  height: 200px;
+  resize: none;
+}
+
+/* From uiverse.io by @adamgiebl */
+.send-button {
+  font-family: inherit;
+  font-size: 20px;
+  background: rgb(37, 198, 133);
+  color: white;
+  cursor: pointer;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+  width: 120px;
+  height: 50px;
+}
+
+.send-button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.send-button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.send-button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.send-button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.send-button:hover span {
+  transform: translateX(5em);
+}
+
+.send-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+.informations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.information-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 15px 0;
+}
+
+.information-title h3 {
+  font-size: 20px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.information-title i {
+  background: var(--jet);
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 50%;
+  color: white;
+}
+
+.information-content p {
+  font-size: 14px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1000px) {
+  .form {
+    margin-bottom: 40px;
+  }
+  .form-card {
+    padding: 20px 10px;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+  }
+  .form-card {
+    grid-template-columns: 1fr;
+  }
+  .informations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    padding: 50px 0 5px 0;
+  }
+}

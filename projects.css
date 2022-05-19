@@ -1,0 +1,109 @@
+.page-title {
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  padding: 60px 2%;
+  font-weight: normal;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 0.5fr));
+  gap: 30px;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.flex-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.project-card img {
+  border-radius: 30px;
+  max-width: 100%;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.flex-card h3 {
+  font-size: 24px;
+  color: var(--jet);
+  margin-bottom: 12px;
+  font-weight: normal;
+}
+
+.flex-card p {
+  color: rgba(49, 49, 49, 0.75);
+  margin-bottom: 12px;
+}
+
+.flex-card a {
+  text-decoration: none;
+  color: var(--independece);
+}
+
+/* VER PROJETO From uiverse.io by @alexmaracinaru */
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 12px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

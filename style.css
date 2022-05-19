@@ -1,0 +1,353 @@
+/*
+Theme Name: Section Theme
+Theme URI: https://github.com/tiagodev96
+Author: Tiago Batista
+Author URI: https://github.com/tiagodev96
+Description: Tema feito com seções bem definidas
+Version: 1.0
+*/
+
+:root {
+  --cosmic-latte: #fffbeb;
+  --cyber-yellow: #fcd306;
+  --light-gray: #d6d6d6;
+  --jet: #313131;
+  --independence: #485060;
+  --ice: #dce3ef;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.center {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 2%;
+}
+
+/** LOADPAGE */
+/* From uiverse.io by @AqFox */
+.spinner {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-right-color: #004dff;
+  animation: spinner-a4dj62 1s infinite linear;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+  animation: spinner-a4dj62 2s infinite;
+}
+
+.spinner::after {
+  margin: 8px;
+  animation-duration: 3s;
+}
+
+@keyframes spinner-a4dj62 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+/** NAVBAR */
+header {
+  background-image: url("./assets/images/painel-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  padding: 10px 0px;
+}
+
+.navbar {
+  align-items: center;
+  color: var(--cosmic-latte);
+  display: flex;
+  height: 110px;
+  justify-content: space-between;
+}
+
+.navbar img {
+  width: 125px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.pages-list li {
+  font-weight: 300;
+  opacity: 0.75;
+}
+
+.pages-list > li.active {
+  font-weight: 400;
+  opacity: 1;
+}
+
+.pages-list > li > a {
+  text-decoration: none;
+  color: var(--cosmic-latte);
+  position: relative;
+}
+
+.pages-list > li > a::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cyber-yellow);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+  transform: scaleX(0);
+}
+
+.pages-list > li > a:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.social-media {
+  display: flex;
+  gap: 25px;
+}
+
+.social-media a {
+  color: var(--cosmic-latte);
+  cursor: pointer;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+.social-media a:hover {
+  transform: scale(1.1);
+  color: var(--cyber-yellow);
+}
+
+.hamburguer-menu {
+  display: none;
+  opacity: 0;
+}
+
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  top: 125px;
+  background: var(--cyber-yellow);
+  color: var(--jet);
+  transform: translateY(-10px);
+  opacity: 0;
+  transform-origin: top;
+  transition: 0.3s ease-in-out;
+}
+
+.dropdown-menu.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.dropdown-menu ul {
+  text-align: center;
+}
+
+.dropdown-menu .pages-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cosmic-latte);
+}
+
+.dropdown-menu .pages-list li a {
+  color: var(--jet);
+  font-size: 16px;
+  display: block;
+}
+
+/** Whatsapp Flutuant Icon */
+.whatsapp-fixed-button {
+  padding: 5px 12px;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #2ee59d;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000000;
+}
+
+.whatsapp-fixed-button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.whatsapp-fixed-button:hover {
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  transform: translateY(-7px);
+}
+
+.whatsapp-fixed-button:hover a {
+  color: #fff;
+}
+
+.whatsapp-fixed-button:active {
+  transform: translateY(-1px);
+} /** END OF WHATSAPP FLUTUANT ICON */
+
+/** FOOTER */
+footer {
+  background: rgb(49, 49, 49);
+  background: linear-gradient(
+    135deg,
+    rgba(49, 49, 49, 1) 0%,
+    rgba(72, 80, 96, 1) 100%
+  );
+  padding: 90px 0 5px 0;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer img {
+  width: 125px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin-bottom: 45px;
+}
+
+.footer-right {
+  color: white;
+  max-width: 500px;
+}
+
+.footer-right div {
+  margin-bottom: 30px;
+}
+
+.footer-right h3 {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--cyber-yellow);
+}
+
+.footer-right p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.container-copyright {
+  border-top: 1px solid var(--jet);
+  margin-top: 30px;
+}
+
+.copyright {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.7;
+  padding: 15px 2%;
+  font-size: 14px;
+}
+
+.copyright a {
+  text-decoration: none;
+  color: white;
+  font-family: "Fira Code", monospace;
+  transition: 0.2s linear;
+}
+.copyright a::before {
+  content: "<";
+}
+.copyright a::after {
+  content: "/>";
+}
+
+.copyright a:hover {
+  color: var(--cyber-yellow);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    opacity: 0;
+  }
+
+  .social-media {
+    display: none;
+    opacity: 0;
+  }
+
+  .hamburguer-menu {
+    display: block;
+    opacity: 1;
+  }
+
+  .dropdown-menu {
+    display: flex;
+  }
+
+  .whatsapp-fixed-button {
+    background-color: #2ee59d;
+  }
+
+  .whatsapp-fixed-button a {
+    color: #fff;
+  }
+}
